@@ -8,10 +8,9 @@ alpha = 3
 N := 5
 size := 200e-9
 
-
 // rotate the cheese.
 for i:=0; i<N; i=i+1{
-	interop := i/(N-1)
+  interop := i/(N-1)
   radius := size*interop/2
   circle_x_position := abs(size)/2 - radius
   circle_y_position := abs(size)/2 - radius
@@ -23,10 +22,10 @@ for i:=0; i<N; i=i+1{
   circles := edge_circle.transl(circle_x_position, circle_y_position, 0).add(edge_circle.transl(-circle_x_position, circle_y_position, 0)).add(edge_circle.transl(-circle_x_position, -circle_y_position, 0)).add(edge_circle.transl(circle_x_position, -circle_y_position, 0))
 
   squircle := horisontal_rectangle.add(vertical_rectangle).add(circles)
-
-	setgeom(squircle)
+  
+  setgeom(squircle)
   m = RandomMag()
-	minimize()
+  minimize()
 
-	save(m)
+  save(m)
 }
